@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/feedback.css') }}">
+</head>
+<body>
+	<header class="header-outer">
+		<div class="header-inner responsive-wrapper">
+			<div class="header-logo">
+				<h2>Kharagpur Guest House Booking</h2>
+			</div>
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRORteuqtaG0f0C2WogImr0JL4ui6yAckU2-A&usqp=CAU " alt="header_logo" class="img img-fluid" width="80" height="60" align="left">
+			<nav class="header-navigation">
+			<a href="/">Logout</a>
+			  <a href="/history">Back</a>
+	
+				<button>Menu</button>
+			</nav>
+		</div>
+	</header>
+<div class="content">
+	<main mv-app="feedbackForm"
+			mv-storage="#data"
+			mv-source="#source"
+			mv-mode="read">
+		<form mv-multiple="feedback" action="/setfeedback/{{ bookingId }}" method="POST">
+			<label>
+				<h1>
+					How satisfied are you overall with the IIT Kharagpur Guest House?
+				</h1>
+
+				<div class="tickmarks">
+					<span mv-multiple="tickmark"
+							mv-value="0 .. 10"
+							mv-storage="none"
+							class="[if($this = score, highlight)]"
+							mv-action="set(score, $this)"></span>
+				</div>
+
+				<input property="score"
+						 type="range" max="10"
+						 style="--score: [score * 10]%" />
+
+				<div class="legend">
+					<span mv-action="set(score, 0)">
+						Not at all likely
+					</span>
+					<span mv-action="set(score, 10)">
+						Extremely likely
+					</span>
+				</div>
+			</label>
+
+			<textarea name="text" property="comment"
+						 cols="30" rows="10"
+						 placeholder="Please give your feedback..."></textarea>
+
+			<div class="mv-bar">
+                <input class="button" type="submit" value="Send Feedback" />
+			</div>
+		</form>
+	</main>
+</div>
+
+
+
+<!-- We need an empty source (which is different from the storage) for not to show end-users previously-stored feedback of other users. -->
+<div id="source" hidden>
+{
+	"feedback": [
+		{}
+	]
+}
+</div>
+</body>
+</html>

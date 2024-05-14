@@ -1,0 +1,299 @@
+/* Header */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+:root {
+	--header-outer-height: 80px;
+	--header-inner-height: 70px;
+	--header-height-difference: calc(
+		var(--header-outer-height) - var(--header-inner-height)
+	);
+	--header-bg: #fff;
+}
+
+body {
+		font-family: "DM Sans", sans-serif;
+    background-image: linear-gradient(#193457, #193457);
+	  line-height: 1.5;
+	  height: 130vh;
+	  margin: 0 ;
+}
+
+h1 {
+	font-weight: bold;
+	margin: 0;
+}
+
+h2 {
+	text-align: center;
+}
+
+p {
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+
+span {
+	font-size: 12px;
+}
+.heading {
+  position : absolute;
+  top : 2px;
+  margin: 10rem 19rem;
+  display: flex ;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  box-shadow: 0 2px 10px 0 #4692e3;
+  flex-direction: row;
+  color: rgb(255, 3, 3);
+  font-weight: bold;
+  background: linear-gradient(to right, #4692e3,#4692e3);;
+}
+
+.heading2 {
+	position : absolute;
+	top : 50px;
+	margin: 10rem 21rem;
+	display: flex ;
+	align-items: center;
+	border-radius: 10px;
+	font-size: 0.7rem;
+	box-shadow: 0 2px 10px 0 #4692e3;
+	flex-direction: row;
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+	background: linear-gradient(to right, #4692e3,#4692e3);;
+  }
+
+  .heading3 {
+	position : absolute;
+	top : 100px;
+	margin: 10rem 21rem;
+	display: flex ;
+	align-items: center;
+	border-radius: 10px;
+	font-size: 0.7rem;
+	box-shadow: 0 2px 10px 0 #4692e3;
+	flex-direction: row;
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+	background: linear-gradient(to right, #4692e3,#4692e3);;
+  }
+
+.responsive-wrapper {
+	width: 90%;
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Sticky header */
+.header-outer {
+	z-index: 100;
+	/* Make it stick */
+	height: var(--header-outer-height);
+	position: sticky;
+	top: calc(
+		var(--header-height-difference) * -1
+	); /* Multiply by -1 to get a negative value */
+	display: flex;
+	align-items: center;
+	color: white;
+	/* Other */
+	background-color:  #4692e3;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0, 0.1);
+}
+
+.header-inner {
+	/* Make it stick */
+	height: var(--header-inner-height);
+	position: sticky;
+	top: 0;
+
+	/* Other */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Styling of other elements */
+.header-logo img {
+	display: block;
+	height: calc(var(--header-inner-height) - 20px);
+}
+
+.header-navigation {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.header-navigation a,
+.header-navigation button {
+	font-size: 1.125rem;
+	color: inherit;
+	margin-left: 1.75rem;
+	position: relative;
+	font-weight: 500;
+}
+
+.header-navigation a {
+	font-size: 1.125rem;
+	color: inherit;
+	text-decoration: none;
+}
+
+.header-navigation button {
+	border: 0;
+	background-color: transparent;
+	padding: 0;
+}
+
+.header-navigation a:hover:after,
+.header-navigation button:hover:after {
+	transform: scalex(1);
+}
+
+.header-navigation a:after,
+.header-navigation button:after {
+	transition: 0.25s ease;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: currentcolor;
+	transform: scalex(0);
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+}
+
+/*Main*/
+[type="date"] {
+  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+* {margin:0;padding:0}
+.checkin{
+  border: 1px #4692e3;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.flex-container
+{
+    /*margin: 10rem;*/
+    margin: 20rem 10rem;
+    display: flex ;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0, 0.1);
+    flex-direction: row;
+    color: white;
+    font-weight: bold;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    background: linear-gradient(to right, #4692e3,#4692e3);
+}
+.checkout{
+  border: 1px black;
+    text-align: center;
+    /*padding: 5px;*/
+}
+.guesthouse{
+	border: 1px black;
+    text-align: center;
+}
+.searchButton:hover {
+  letter-spacing: 0.8em;
+  background-color: whitesmoke;
+}
+
+.error{
+    color: white;
+    font-size: 1.2rem;
+}
+
+.searchButton {
+  color: #4692e3;
+    height: 4em;
+    padding: 0 0.8rem;
+  background-color: rgb(255, 255, 255);
+    margin: 1rem 0;
+  border: none;
+    font-size: 1.0rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  transition: all 0.2s cubic-bezier(.4,0,.2,1);
+}
+.dateLabel{
+    margin-top: 10px;
+    margin-right: 1rem;
+}
+
+.dateInput{
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+}
+
+.backImage{
+    z-index: -5;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*Nav bar*/
+.nav{
+    width:100%;
+    /*margin:auto;*/
+background-color:r#4692e3
+}
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  /*margin: 0 100px;*/
+  font: 25px helvetica;
+  font-weight:bold;
+    font-size: 1.2rem;
+  text-align: center;
+}
+
+ .nav li {
+  flex: 1;
+  border-style: solid;
+  border-color: #4692e3;
+  height: 65px;
+  background:#4692e3 ;
+}
+
+.nav a {
+  position: relative;
+  top: 15px;
+  text-decoration: none;
+  color: white;
+}
+
+ .nav li:hover {
+  flex:1.1;
+  transition:all .3s ease;
+}
+
+
+

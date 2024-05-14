@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/payment.css') }}">
+
+</head>
+
+<body>
+  <header class="header-outer">
+    <div class="header-inner responsive-wrapper">
+        <div class="header-logo">
+            <h2>Kharagpur Guest House Booking</h2>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRORteuqtaG0f0C2WogImr0JL4ui6yAckU2-A&usqp=CAU " alt="header_logo" class="img img-fluid" width="80" height="60" align="left">
+        <nav class="header-navigation">
+            <a href="/">Logout</a>
+            <a href="/rooms">back</a>
+        </nav>
+    </div>
+</header>
+    <div class="bookingBox">
+        <div class="date">
+          <span class="category">Room Price:</span>
+          <span class="price">{{ roomPrice }} </span>
+        </div>
+        <div class="date">
+          <span class="category">Food Price :</span>
+          <span class="price">{{ foodPrice }} </span>
+        </div>
+        <div class="date">
+          <span class="category">Amenity Price:</span>
+          <span class="price">{{ amenityPrice }}</span>
+        </div>
+        <div class="date">
+          <span class="category">Total:(After Discount)</span>
+          <span class="price">{{ roomPrice+foodPrice+amenityPrice }}</span>
+        </div>
+        <div class="date">
+          <span class="category"><b>Booking Amount(20%):</b></span>
+          <span class="price"><b>{{ payable }}</b></span>
+        </div>
+        <div class="buttonDiv">
+          <a href="{{ url_for('cash') }}" class="payment-btn"><button class="button">Cash</button></a>
+          <a href="{{ url_for('credit') }}" class="payment-btn"><button class="button">Credit</button></a>
+          <a href="{{ url_for('upi') }}" class="payment-btn"><button class="button">Upi</button></a>
+      </div>
+        
+  </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+</html>

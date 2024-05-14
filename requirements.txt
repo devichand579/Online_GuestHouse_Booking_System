@@ -1,0 +1,14 @@
+Flask
+Flask-SQLAlchemy
+Jinja2
+MarkupSafe
+SQLAlchemy
+Werkzeug
+click
+greenlet
+itsdangerous
+importlib-metadata
+pip
+setuptools
+typing-extensions
+zipp

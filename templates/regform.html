@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Registration</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='/css/regform.css') }}">
+</head>
+
+<body>
+    <header class="header-outer">
+	<div class="header-inner responsive-wrapper">
+		<div class="header-logo">
+			<h2>Kharagpur Guest House Booking</h2>
+		</div>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRORteuqtaG0f0C2WogImr0JL4ui6yAckU2-A&usqp=CAU " alt="header_logo" class="img img-fluid" width="80" height="60" align="left">
+		<nav class="header-navigation">
+			 <a href="/">Home</a>
+      <a href="http://www.iitkgp.ac.in/">About</a>
+        <a href="/">Login</a>
+          <a href="/">Register</a>
+
+			<button>Menu</button>
+		</nav>
+	</div>
+    </header>
+  <div class="form_wrapper">
+    <div class="form_container">
+      <div class="title_container">
+        <h1>Registration</h1>
+        {% if flag == 0 %}
+            <div class="warning">Username taken !!</div>
+        {% endif %}
+      </div>
+      <div class="row clearfix">
+        <div class="">
+          <form action="/signup" method="POST">
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+              <input type="text" name="username" placeholder="Username" required />
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+              <input type="password" name="password" placeholder="Password" required />
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+              <input type="email" name="email" placeholder="Email" required />
+            </div>
+            <div class="row clearfix">
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                  <input type="text" name="first_name" placeholder="First Name" required />
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                  <input type="text" name="last_name" placeholder="Last Name" required />
+                </div>
+              </div>
+            </div>
+            <div class="row clearfix">
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                  <input type="text" name="age" placeholder="Age" required />
+                </div>
+              </div>
+              <div class="input_field ">
+                <label for="gender">Select gender :</label>
+                <select name = "gender">
+                  
+                  <option value = "Male">Male</option>
+                  <option value = "Female">Female</option>
+                </select>
+              </div>
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+              <input type="text" name="address1" placeholder="Address Line 1" required />
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+              <input type="text" name="address2" placeholder="Address Line 2" required />
+            </div>
+            <div class="row clearfix">
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                  <input type="text" name="city" placeholder="City" required />
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                  <input type="text" name="state" placeholder="State" required />
+                </div>
+              </div>
+            </div>
+              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+              <input type="text" name="roll" placeholder="your id (User/admin)" />
+              </div>
+            <div class="input_field">
+  <div class="fileText">Upload your image</div>
+            <input type="file" id="myFile" name="image">
+            </div>
+            <div class="input_field ">
+              <label for="role">Select role :</label>
+              <select name = "role">
+                <option value = "Admin">Admin</option>
+                <option value = "User">User</option>
+              </select>
+            </div>
+            <input class="button" type="submit" value="Register" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

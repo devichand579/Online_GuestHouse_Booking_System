@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<!---Calender.html is used to take in checkIn and checkOut dates to check room availability-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/calendar.css') }}">
+</head>
+
+<body>
+
+    <header class="header-outer">
+       
+        <div class="header-inner responsive-wrapper">
+            <div class="header-logo">
+                <h2>Kharagpur Guest House Booking</h2>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRORteuqtaG0f0C2WogImr0JL4ui6yAckU2-A&usqp=CAU " alt="header_logo" class="img img-fluid" width="80" height="60" align="left">
+            <nav class="header-navigation">
+                <a href="http://www.iitkgp.ac.in/">About</a>
+                <a href="/">Logout</a>
+                {# <button>Menu</button>#}
+            </nav>
+        </div>
+    </header>
+
+    <div class="nav">
+        <ul class="navigation">
+            <li><a href="/dates">Book Now</a></li>
+            <li><a href="/history">Your Booking</a></li>
+            <li><a href="/profile">Profile</a></li>
+        </ul>
+    </div>
+    <div class="heading">
+    <h1>Please Select a Valid CheckIn and CheckOut Date</h1>
+    </div>
+    <div class="heading2">
+    <h1>15 % discount for booking before a Month !!</h1>
+</div>
+<div class="heading3">
+    <h1>10 % discount for booking before 15 days !!</h1>
+</div>
+    <form action="/dates" method="POST">
+            <div class="flex-container">
+                
+                <div class="checkin">
+                    <label class="dateLabel" for="checkintime">Check-In Date</label>
+                    <input class="dateInput" type="date" name="checkintime" id="checkintime" placeholder="YYYY-DD-MM">
+                </div>
+
+                <div class="checkout">
+                    <label class="dateLabel" for="checkouttime">Check-Out Date</label>
+                    <input class="dateInput" type="date" name="checkouttime" id="checkouttime" placeholder="YYYY-DD-MM">
+                </div>
+                <div class="input_field ">
+                    <label for="guest House">Guest House :</label>
+                    <select name = "ghid">
+                      
+                      <option value = "0">Technology Guest House</option>
+                      <option value = "1">Viswesarayya Guest House</option>
+                      <option value = "2">Kolkota Guest House</option>
+                    </select>
+                  </div>
+                <button class="searchButton" type="submit">Search</button>
+                {% if flag==0 %}
+                <span class="error">Invalid Input!!</span> {% endif %}
+            </div>
+
+    </form>
+
+
+</body>
+
+</html>

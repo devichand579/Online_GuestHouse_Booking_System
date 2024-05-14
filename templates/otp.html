@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>otp verification</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='/css/otp.css') }}">
+</head>
+
+<body>
+    <header class="header-outer">
+        <div class="header-inner responsive-wrapper">
+            <div class="header-logo">
+                <h2>Kharagpur Guest House Booking</h2>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRORteuqtaG0f0C2WogImr0JL4ui6yAckU2-A&usqp=CAU " alt="header_logo" class="img img-fluid" width="80" height="60" align="left">
+            <nav class="header-navigation">
+                 <a href="/">Home</a>
+          <a href="http://www.iitkgp.ac.in/">About</a>
+            <a href="/">Login</a>
+              <a href="/">Register</a>
+    
+                <button>Menu</button>
+            </nav>
+        </div>
+    </header>
+    <div class="form_wrapper">
+      <div class="form_container">
+        <div class="title_container">
+          <h1>Registration</h1>
+        </div>
+        <div class="row clearfix">
+          <div class="">
+            <form action="/otp" method="POST">
+              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                <input type="text" name="otp" placeholder="enter your otp" required />
+              </div>
+              <input type="submit" class="button" value="Submit" name="action1" />
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+</html>

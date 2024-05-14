@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Online Guest House Booking system</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/Booking.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <header class="header-outer">
+        <div class="header-inner responsive-wrapper">
+            <div class="header-logo">
+                <h2>Kharagpur Guest House Booking</h2>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRORteuqtaG0f0C2WogImr0JL4ui6yAckU2-A&usqp=CAU " alt="header_logo" class="img img-fluid" width="80" height="60" align="left">
+            <nav class="header-navigation">
+                <a href="/adminDates">Back</a>
+                <a href="/">Logout</a>
+            </nav>
+        </div>
+    </header>
+    <div class="complete">
+
+        </div>
+        <div class="main">
+            {% for room in rooms %} 
+                    <div class="row">
+                        <section class="room">
+                            <!-- Room Image -->
+                            <div class="room_img">
+                                {% if room.roomtype == "D/B AC Rooms" %}
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStn95CZ1p-LyGbmo4JU3Lqnq9vAOO9Z024srCXbZehDQ&usqp=CAU&ec=48665701" />{% elif room.roomtype == "D/B NON AC Rooms" %}
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStn95CZ1p-LyGbmo4JU3Lqnq9vAOO9Z024srCXbZehDQ&usqp=CAU&ec=48665701" />{% elif room.roomtype == "Suite Rooms" %}
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRhNVyAdRVhyAGMvbwPlyAA0IOw5qcQDWU6D2zgx-cSQ&usqp=CAU&ec=48665701" />{% elif room.roomtype == "Meeting Room" %}
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxX9SG9bXppRkPiF8__hbAdAVO-UEQHayp7Y1Iocux5Q&usqp=CAU&ec=48665701" />{% elif room.roomtype == "Dormitory Beds AC" %}
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm8mHWTb8ZqN0AVe2lOSaFEvDOPdKUS18ho6wkcZ8u5NlMUOuHm_qAmSZsUpYH9DIZ6bGjgtpVGQk&usqp=CAU&ec=48665701" />{% endif %}
+                            </div>
+                            <!-- Room Information -->
+                            <div class="room_information">
+                                <h1 class="room_information--heading">{{ room.roomtype }}</h1>
+                                <p>{{ room.description }}</p>
+                                <div class="availability">
+                                    <h3>Availability: </h3>
+                                    <div class="days">
+                                        <div {% if avail[loop.index0][0]==0 %} class="box green_box" {% else %} class="box red_box" {% endif %}>{{ days[0]}}</div>
+                                        <div {% if avail[loop.index0][1]==0 %} class="box green_box" {% else %} class="box red_box" {% endif %}>{{ days[1]}}</div>
+                                        <div {% if avail[loop.index0][2]==0 %} class="box green_box" {% else %} class="box red_box" {% endif %}>{{ days[2]}}</div>
+                                        <div {% if avail[loop.index0][3]==0 %} class="box green_box" {% else %} class="box red_box" {% endif %}>{{ days[3]}}</div>
+                                        <div {% if avail[loop.index0][4]==0 %} class="box green_box" {% else %} class="box red_box" {% endif %}>{{ days[4]}}</div>
+                                        <div {% if avail[loop.index0][5]==0 %} class="box green_box" {% else %} class="box red_box" {% endif %}>{{ days[5]}}</div>
+                                        <div {% if avail[loop.index0][6]==0 %} class="box green_box" {% else %} class="box red_box" {% endif %}>{{ days[6]}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="room_features">
+                                <ul>
+                                    <li><i class="fa fa-bed"></i>{% if room.ac %} AC {% else %} NON AC {% endif %}</li>
+                                    <!-- Bath Icon -->
+                                    <li><i class="fa fa-male"></i>{{ room.occupancy }}</li>
+                                    <!-- People Icon -->
+                                    <li><span class="room_features--price"></span>{{ room.pricePerDay }}<small class="room_features--currency">/-</small></li>
+                                    <!-- Price -->
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                    {% endfor %}
+        </div>
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="{{ url_for('static',filename='/js/Booking.js') }}"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</html>

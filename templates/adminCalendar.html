@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/calendar.css') }}">
+</head>
+<body>
+<header class="header-outer">
+        <div class="header-inner responsive-wrapper">
+            <div class="header-logo">
+                <h2>Kharagpur Guest House Booking</h2>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRORteuqtaG0f0C2WogImr0JL4ui6yAckU2-A&usqp=CAU " alt="header_logo" class="img img-fluid" width="80" height="60" align="left">
+            <nav class="header-navigation">
+                
+                <a href="/">Logout</a>
+            </nav>
+        </div>
+    </header>
+<img class="backImage" src="data:image/jpeg;base64,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" />
+<div class="nav">
+    <ul class="navigation">
+        <li><a href="/admin">Authorize Users</a></li>
+      <li><a href="/adminDates">View Rooms</a></li>
+      <li><a href="/adminHistory">All Bookings</a></li>
+      <li><a href="/profile">Profile</a></li>
+
+    </ul>
+</div>
+    <form action="/adminDates" method="POST">
+        <div class="flex-container">
+            <div class="heading">
+                <h1>Please Select a Valid CheckIn and CheckOut Date</h1>
+                </div>
+            <div class="checkin">
+                <label class="dateLabel" for="checkintime">Begin Date</label>
+                <input class="dateInput" type="date" name="checkintime" id="checkintime" placeholder="YYYY-DD-MM">
+            </div>
+
+            <div class="checkout">
+                <label class="dateLabel" for="checkouttime">End Date</label>
+                <input class="dateInput" type="date" name="checkouttime" id="checkouttime" placeholder="YYYY-DD-MM">
+            </div>
+
+            <div class="input_field ">
+                <label for="guest House">Guest House :</label>
+                <select name = "ghid">
+                  
+                  <option value = "0">Technology Guest House</option>
+                  <option value = "1">Viswesarayya Guest House</option>
+                  <option value = "2">Kolkota Guest House</option>
+                </select>
+              </div>
+            <button class="searchButton" type="submit">Search</button>
+            {% if flag==0 %}
+            <span class="error">Invalid Input!!</span> {% endif %}
+        </div>
+    </form>
+
+    
+
+
+
+</body>
+
+</html>

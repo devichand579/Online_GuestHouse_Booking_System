@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Booking</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/prevBooking.css') }}">
+</head>
+
+<body>
+    <header class="header-outer">
+        <div class="header-inner responsive-wrapper">
+            <div class="header-logo">
+                <h2>Kharagpur Guest House Booking</h2>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRORteuqtaG0f0C2WogImr0JL4ui6yAckU2-A&usqp=CAU " alt="header_logo" class="img img-fluid" width="80" height="60" align="left">
+            <nav class="header-navigation">
+                <a href="/dates">Book Now</a>
+                <a href="/">Logout</a>
+               
+            </nav>
+        </div>
+    </header>
+{% for i in bookings %}
+    <div class="bookingBox">
+        <div>
+            <div class="bookingDates">
+                <div class="date">
+                    <h3>Date of Arrival: </h3>
+                    <h4>{{ i.checkindate }}</h4>
+                </div>
+                <div class="date">
+                    <h3>Date of Departure: </h3>
+                    <h4>{{ i.checkoutdate }}</h4>
+                </div>
+                <div class="date">
+                    <h3>Date of Booking: </h3>
+                    <h4>{{ i.dateOfBooking }}</h4>
+                </div>
+            </div>
+            <div class="details">
+                <div class="date">
+                    <h3>payment id: </h3>
+                    <h4>{{ paymentids[loop.index0].paymentid }}</h4>
+                </div>
+                <div class="date">
+                    <h3>Room: </h3>
+                    <h4>{{ rooms[loop.index0].roomtype }}</h4>
+                </div>
+                <div class="date">
+                    <h3>Individuals: </h3>
+                    <h4>{{ rooms[loop.index0].occupancy }}</h4>
+                </div>
+            </div>
+            <div class="price">
+                <div class="date">
+                    <h3 class="price">Price: </h3>
+                    <h4 class="amount">{{prices[loop.index0].amount}}</h4>
+                </div>
+            </div>
+            <div class="status">
+                <div class="date">
+                    <h3 class="status">Status: </h3>
+                    <h4 class="amount">{% if i.confirmation==0 %} in Queue {% elif  i.confirmation==1 %} Confirmed {% else %} Cancelled {% endif %}</h4>
+                </div>
+            </div>
+        </div>
+        {% if i.confirmation==3 %}
+        <div class="buttonDiv">
+            <button class="button">Canceled!</button>
+        </div>
+        <div class="buttonDiv2">
+            <button class="button">Room Canceled !</button>
+        </div>
+        {% elif i.confirmation==4 %}
+        <div class="buttonDiv2">
+            <button class="button">FeedBack TimeOut</button>
+        </div>
+        {% else %}
+        <div class="buttonDiv">
+            <a href="{{ url_for('cancelBooking', bookingId=i.id) }}" class="room_features--book-btn"><button class="button">Cancel</button></a>
+        </div>
+        <div class="buttonDiv2">
+            <a href="{{ url_for('feedback', bookingId=i.id) }}" ><button class="button">FeedBack</button></a>
+        </div>
+        {% endif %}
+        
+    </div>
+{% endfor %}
+
+</body>
+
+</html>

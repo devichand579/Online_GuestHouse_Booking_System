@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kharagpur Guest House </title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/index.css') }}">
+</head>
+
+<body>
+    <header class="header-outer">
+        <div class="header-inner responsive-wrapper">
+            <div class="header-logo">
+                <h2>Kharagpur Guest House Booking</h2>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRORteuqtaG0f0C2WogImr0JL4ui6yAckU2-A&usqp=CAU " alt="header_logo" class="img img-fluid" width="80" height="60" align="left">
+            <nav class="header-navigation">
+                <a href="/">Home</a>
+                <a href="#footerid">Contact Us</a>
+                <a href="/">Login</a>
+                <a href="/signup">Register</a>
+            </nav>
+        </div>
+    </header>
+    <img class="backImage" src="data:image/jpeg;base64,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" />
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form action="/" method="POST">
+                <h1 class="margin">Sign in</h1>
+                {% if flag == 0%}
+                <span class="error">Waiting  for Authentication by Admin !!</span> {% elif flag == 1 %}
+                <span class="error">Username or Password wrong !!</span> {% elif flag == 2 %}
+                <span class="error">Authentication Denied !!</span>{% elif flag == 3%} 
+                <span class="error">Successfully registered !!</span>{% elif flag == 4%}
+                <span class="error">Verification Unsuccessful !!</span>{% endif %}
+                <input type="text" name="username" id="email" placeholder="UserName" />
+                <input type="password" name="password" id="password" placeholder="Password" /> 
+                <input class="button margin buttonSignIn" id="login" type="submit" value="Sign In" />
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <h1>Welcome!</h1>
+                    <p>Create an account and book your room !</p>
+                    <a href="/signup"><button class="ghost" id="signUp">Sign Up</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="guestHouses">
+        <div class="guestHouse">
+            <img class="guestHouseImg" src={{ url_for( 'static',filename='/images/tghfront.jpg' ) }}/>
+            <div class="textBox">
+                <div class="guestHouseName">Technology Guest House</div>
+            </div>
+        </div>
+        <div class="guestHouse">
+            <div class="textBox">
+                <div class="guestHouseName">Visveswaraya Guest House</div>
+            </div>
+            <img class="guestHouseImg" src={{ url_for( 'static',filename='/images/vgh.jpg' ) }}/>
+        </div>
+        <div class="guestHouse">
+            <img class="guestHouseImg" src={{ url_for( 'static',filename='/images/kolkata1.jpg' ) }}/>
+            <div class="textBox">
+                <div class="guestHouseName">Kolkata Guest House</div>
+            </div>
+        </div>
+    </div>
+
+<footer id="dk-footer" class="dk-footer">
+            <div class="footerContainer" >
+                <a name="footerid"></a>
+                <div class="logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRORteuqtaG0f0C2WogImr0JL4ui6yAckU2-A&usqp=CAU" alt="footer_logo" class="img img-fluid">
+                </div>
+                <div class="info">
+                        <div class="contact-us">
+                            <div class="contact-icon">
+                                <i class="fa fa-map-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h3>Contact: </h3>
+                                <p>Technology Guest House</p>
+                                <p>IIT Kharagpur</p>
+                                <p>Kharagpur, 721302</p>
+                            </div>
+                        </div>
+                        <div class="contact-us">
+                            <div class="contact-icon">
+                                <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h3>Phone Number: </h3>
+                                <p>+91 9502545759</p>
+                                <p>+91 9391104532</p>
+                            </div>
+                        </div>
+                        <div class="contact-us email">
+                            <div class="contact-icon">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h3>Email</h3>
+                                <p>devichand.nssc@gmail.com</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        <div class="copyright">
+            <span>Copyright © 2019, All Right Reserved </span>
+            <div class="copyright-menu">
+                <ul>
+                    <li>
+                        <a href="https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiyoKjzv6H-AhXgTmwGHc7wBi0QFnoECAgQAQ&url=http%3A%2F%2Fwww.tgh.iitkgp.ac.in%2F&usg=AOvVaw02T1SEA5_dtoGO7XSZEN_v">Home</a>
+                    </li>
+                    <li>
+                        <a href="http://www.tgh.iitkgp.ac.in/?id=randc">Terms</a>
+                    </li>
+                    <li>
+                        <a href="http://www.tgh.iitkgp.ac.in/?id=randc">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</footer>
+
+</body>
+<script src="{{ url_for('static',filename='/js/index.js') }}"></script>
+
+</html>
