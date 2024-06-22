@@ -1,6 +1,9 @@
 # Online Guest House Booking System
-
 ## Installation and Running
+Clone the epository 
+```bash
+git clone 
+```
 use the following command  to install all the required libraries 
 
 ```bash
