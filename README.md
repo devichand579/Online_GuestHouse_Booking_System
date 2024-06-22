@@ -1,6 +1,6 @@
 # Online Guest House Booking System
 ## Installation and Running
-Clone the epository 
+Clone the repository 
 ```bash
 git clone https://github.com/devichand579/Online_GuestHouse_Booking_System.git
 ```
