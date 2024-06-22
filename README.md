@@ -2,7 +2,7 @@
 ## Installation and Running
 Clone the epository 
 ```bash
-git clone 
+git clone https://github.com/devichand579/Online_GuestHouse_Booking_System.git
 ```
 use the following command  to install all the required libraries 
 
